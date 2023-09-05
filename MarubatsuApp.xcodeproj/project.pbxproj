@@ -13,6 +13,7 @@
 		8BA77C562AA2AE9A00EA2340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BA77C542AA2AE9A00EA2340 /* Main.storyboard */; };
 		8BA77C582AA2AE9B00EA2340 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BA77C572AA2AE9B00EA2340 /* Assets.xcassets */; };
 		8BA77C5B2AA2AE9B00EA2340 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BA77C592AA2AE9B00EA2340 /* LaunchScreen.storyboard */; };
+		8BA77D0D2AA7052C00EA2340 /* CreateQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA77D0C2AA7052C00EA2340 /* CreateQuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8BA77C572AA2AE9B00EA2340 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BA77C5A2AA2AE9B00EA2340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BA77C5C2AA2AE9B00EA2340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BA77D0C2AA7052C00EA2340 /* CreateQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				8BA77C4E2AA2AE9A00EA2340 /* AppDelegate.swift */,
 				8BA77C502AA2AE9A00EA2340 /* SceneDelegate.swift */,
 				8BA77C522AA2AE9A00EA2340 /* ViewController.swift */,
+				8BA77D0C2AA7052C00EA2340 /* CreateQuestionViewController.swift */,
 				8BA77C542AA2AE9A00EA2340 /* Main.storyboard */,
 				8BA77C572AA2AE9B00EA2340 /* Assets.xcassets */,
 				8BA77C592AA2AE9B00EA2340 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA77D0D2AA7052C00EA2340 /* CreateQuestionViewController.swift in Sources */,
 				8BA77C532AA2AE9A00EA2340 /* ViewController.swift in Sources */,
 				8BA77C4F2AA2AE9A00EA2340 /* AppDelegate.swift in Sources */,
 				8BA77C512AA2AE9A00EA2340 /* SceneDelegate.swift in Sources */,

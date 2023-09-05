@@ -8,12 +8,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var questionLabel: UILabel!
+    
+    @IBOutlet weak var Segment: UISegmentedControl!   //宿題で追加
     
     // 表示中の問題番号を格納
     var currentQuestionNum: Int = 0
-    
     // 問題
     let questions: [[String: Any]] = [
         [
@@ -33,17 +34,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showQuestion()
+        segmented.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)  //宿題で追加
+        
     }
     
     //問題を表示する関数
     func showQuestion(){
         let question = questions[currentQuestionNum]
-
+        
         if let que = question["question"] as? String {
             questionLabel.text = que
-        }
     }
-
+    
     //回答チェックの関数、正解なら次の問題を表示
     func checkAnswer(yourAnswer: Bool){
         let question = questions[currentQuestionNum]
@@ -65,8 +67,7 @@ class ViewController: UIViewController {
         if currentQuestionNum >= questions.count {
             currentQuestionNum = 0
         }
-            
-            
+        
         showQuestion()     //正解→次の問題を表示、不正解→同じ問題を表示
         
     }
@@ -86,5 +87,12 @@ class ViewController: UIViewController {
     @IBAction func tappedYesButton(_ sender: Any) {
         checkAnswer(yourAnswer: true)
     }
+
+        
 }
 
+    // 選択された時に実行させたい処理 宿題で追加
+    @objc  func segmentChanged() {
+        let selectedIndex = segmented.selectedSegmentIndex
+        print(selectedIndex)
+    }
