@@ -10,9 +10,6 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     
-    
-    
-    // Put Question number
     var currentQuestionNum: Int = 0
     
     // 問題
@@ -38,7 +35,6 @@ class ViewController: UIViewController {
     }
     
     
-    // Display question
     func showQestion(){
         if currentQuestionNum >= questions.count {
             questionLabel.text = "問題がありません"
@@ -52,9 +48,8 @@ class ViewController: UIViewController {
         }
     }
     
-    // Check answer is corrent proceed next question
     func checkAnswer(yourAnswer: Bool){
-        // 現在の問題番号がquestionsの範囲外である場合、アラートを表示して関数を終了
+        // 関数を終了してアラートを出すための関数
         if currentQuestionNum >= questions.count {
             showAlert(message: "問題がありません")
             return
@@ -63,29 +58,26 @@ class ViewController: UIViewController {
         
         if let ans = question["answer"] as? Bool{
             if yourAnswer == ans {
-                // When correct answer
-                // Plus 1 to currentQuestionNum and next question
                 currentQuestionNum += 1
                 showAlert(message: "正解!")
             } else {
-                // When incorrect
                 showAlert(message: "不正解!")
             }
             
-        } else { // When not answer
+        } else {       // 答えがないとき
             print("答えが入っていません")
             return
         }
-        // if currentQuestionNum more tha qty of Question, back to initial question
+  
         if currentQuestionNum >= questions.count {
             currentQuestionNum = 0
         }
         
         
-        showQestion() //Correct -> next Question, Incorrect -> Same question.
+        showQestion()
     }
     
-    // アラートを表示する関数
+    // アラートを表示
     func showAlert(message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let close = UIAlertAction(title: "閉じる", style: .cancel, handler: nil)
@@ -101,7 +93,7 @@ class ViewController: UIViewController {
         checkAnswer(yourAnswer: true)
     }
     
-    // 問題作成画面に遷移するボタンのアクション
+    // 問題作成画面移動するボタン
     @IBAction func createQuestionButtonTapped(_ sender: Any) {
         let createQuestionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateQuestionViewController") as! CreateQuestionViewController
         createQuestionVC.questions = self.questions
@@ -110,7 +102,7 @@ class ViewController: UIViewController {
     }
 
 }
-// CreateQuestionViewControllerからのデータを受け取るための拡張
+
 extension ViewController: CreateQuestionDelegate {
     func didUpdateQuestions(updatedQuestions: [[String : Any]]) {
         self.questions = updatedQuestions
