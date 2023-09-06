@@ -2,7 +2,7 @@
 //  ViewController.swift
 //
 //
-//  Created by Ngos on
+//  Created by Yumi Ito on 2023/09/02.
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  CreateQuestionViewController.swift
 //
 //
-//  Created by Ngos on 2023/09/04.
+//  Created by Yumi Ito on 2023/09/02.
 //
 
 import UIKit
